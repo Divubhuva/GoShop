@@ -11,7 +11,7 @@ import {useSelector} from 'react-redux'
 function App() {
 
 
-    const userSignin = useSelector(state => state.userSignin)
+    const userSignin = useSelector((state) => state.userSignin)
     const {userInfo} = userSignin
 
 
@@ -35,8 +35,8 @@ function App() {
                 <div className="header-links">
                     <a href="cart.html">Cart</a>
                     {
-                        userInfo ? <Link to="/profile">{userInfo.name}</Link> :
-                        <Link to="/signin/"> Sign In</Link>
+                        userInfo ? (<Link to="/profile">{userInfo.name}</Link>) :
+                       ( <Link to="/signin"> Sign In</Link>)
                     }
 
                 </div>
@@ -61,7 +61,7 @@ function App() {
             </aside>
             <main className="main">
                 <div className="content">
-                    <Route path="/signin/" component={SigninScreen} />
+                    <Route path="/signin" component={SigninScreen} />
                     <Route path="/product/:id" component={ProductScreen} />
                     <Route path="/cart/:id?" component={CartScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
