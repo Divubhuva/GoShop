@@ -16,23 +16,23 @@ function App() {
 
 
   const openMenu = () => {
-    document.querySelector(".sidebar").classList.add("open")
+    document.querySelector(".sidebar").classNameList.add("open")
   }
 
   const closeMenu = () => {
-    document.querySelector(".sidebar").classList.remove("open")
+    document.querySelector(".sidebar").classNameList.remove("open")
   }
   return (
     <BrowserRouter>
-    <div class="grid-container">
-            <header class="header">
-                <div class="brand">
+    <div className="grid-container">
+            <header className="header">
+                <div className="brand">
                     <button onClick={openMenu}>
                         &#9776;
                     </button>
                     <Link to="/" >GoShop</Link>
                 </div>
-                <div class="header-links">
+                <div className="header-links">
                     <a href="cart.html">Cart</a>
                     {
                         userInfo ? <Link to="/profile">{userInfo.name}</Link> :
@@ -41,9 +41,9 @@ function App() {
 
                 </div>
             </header>
-            <aside class="sidebar">
+            <aside className="sidebar">
                 <h3>Shopping Categories</h3>
-                <button class="sidebar-close-button" onClick={closeMenu}>x</button>
+                <button className="sidebar-close-button" onClick={closeMenu}>x</button>
                 <ul>
                     <li>
                         <a href="index.html">Office Dresses</a>
@@ -59,15 +59,15 @@ function App() {
                     </li>
                 </ul>
             </aside>
-            <main class="main">
-                <div class="content">
+            <main className="main">
+                <div className="content">
                     <Route path="/signin/" component={SigninScreen} />
                     <Route path="/product/:id" component={ProductScreen} />
                     <Route path="/cart/:id?" component={CartScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
                 </div>
             </main>
-            <footer class="footer">
+            <footer className="footer">
                 All right reserved.
             </footer>
         </div>
