@@ -6,22 +6,23 @@ import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/signinScreen';
+import RegisterScreen from './Screens/RegisterScreen'
 import {useSelector} from 'react-redux'
 
 function App() {
 
 
     const userSignin = useSelector((state) => state.userSignin)
-    const {userInfo} = userSignin
+    const {userInfo} = userSignin;
 
 
   const openMenu = () => {
-    document.querySelector(".sidebar").classNameList.add("open")
-  }
+    document.querySelector(".sidebar").classList.add("open")
+  };
 
   const closeMenu = () => {
-    document.querySelector(".sidebar").classNameList.remove("open")
-  }
+    document.querySelector(".sidebar").classList.remove("open")
+  };
   return (
     <BrowserRouter>
     <div className="grid-container">
@@ -62,6 +63,7 @@ function App() {
             <main className="main">
                 <div className="content">
                     <Route path="/signin" component={SigninScreen} />
+                    <Route path="/register" component={RegisterScreen} />
                     <Route path="/product/:id" component={ProductScreen} />
                     <Route path="/cart/:id?" component={CartScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
