@@ -46,7 +46,7 @@ function ProductScreen(props) {
                     <li>
                         Description:
                         <div>
-                            {product.discription}
+                            {product.description}
                         </div>
                     </li>
                 </ul>

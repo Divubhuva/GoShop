@@ -8,7 +8,8 @@ export default {
         brand: 'By Venus',
         rating: 4.5,
         numReviews: 10,
-        countInStock: 5
+        countInStock: 5,
+        description: 'Black & white long sleeve'
     },
     {
         _id: '2',
@@ -19,7 +20,8 @@ export default {
         brand: 'By Shein',
         rating: 4.3,
         numReviews: 12,
-        countInStock: 7
+        countInStock: 7,
+        description: 'Elegent long sleeve, regular fit'
     },
     {
         _id: '3',
@@ -30,7 +32,8 @@ export default {
         brand: 'By Venus',
         rating: 4,
         numReviews: 9,
-        countInStock: 10
+        countInStock: 10,
+        description: 'Tie detail at neck, side pockets'
     },
     {
         _id: '4',
@@ -41,7 +44,8 @@ export default {
         brand: 'By Venus',
         rating: 4.5,
         numReviews: 15,
-        countInStock: 9
+        countInStock: 9,
+        description: 'Elastic at waist, stretched fabric'
     },
     {
         _id: '5',
@@ -52,7 +56,8 @@ export default {
         brand: 'By Venus',
         rating: 4.5,
         numReviews: 5,
-        countInStock: 5
+        countInStock: 5,
+        description: 'color=Green, plus size available'
     },
     {
         _id: '6',
@@ -63,7 +68,8 @@ export default {
         brand: 'By Shein',
         rating: 4.7,
         numReviews: 10,
-        countInStock: 6
+        countInStock: 6,
+        description: 'belt at waist, plus size'
     },
     {
         _id: '7',
@@ -74,7 +80,8 @@ export default {
         brand: 'By Venus',
         rating: 4.8,
         numReviews: 8,
-        countInStock: 9
+        countInStock: 9,
+        description: 'Perfact & dance-all-night style'
     },
     {
         _id: '8',
@@ -85,7 +92,8 @@ export default {
         brand: 'By Shein',
         rating: 4.5,
         numReviews: 5,
-        countInStock: 11
+        countInStock: 11,
+        description: 'V neck, Short sleeve, cold shoulder'
     },
     {
         _id: '9',
@@ -96,7 +104,8 @@ export default {
         brand: 'By Venus',
         rating: 5,
         numReviews: 1,
-        countInStock: 5
+        countInStock: 5,
+        description: 'solid, Maxi, High waist, Blue'
     },
     {
         _id: '10',
@@ -107,7 +116,8 @@ export default {
         brand: 'By Venus',
         rating: 4.5,
         numReviews: 10,
-        countInStock: 2
+        countInStock: 2,
+        description: 'Black, V neck, long sleeve'
     },
     {
         _id: '11',
@@ -118,7 +128,8 @@ export default {
         brand: 'By Shein',
         rating: 4.9,
         numReviews: 10,
-        countInStock: 4
+        countInStock: 4,
+        description: 'Round neck, High waist, short sleeve'
     },
     {
         _id: '12',
@@ -129,7 +140,8 @@ export default {
         brand: 'By Shein',
         rating: 4.7,
         numReviews: 7,
-        countInStock: 3
+        countInStock: 3,
+        description: 'Round neck, High waist, pink, elastic at waist'
     },
 ]
 }
