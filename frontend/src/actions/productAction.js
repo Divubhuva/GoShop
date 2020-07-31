@@ -13,7 +13,7 @@ const listProducts = () => async (dispatch) => {
     }
 }
 
-const saveProduct = (product) => async (dispatch, getState) => {
+const saveProducts = (product) => async (dispatch, getState) => {
     try {
       dispatch({ type: PRODUCT_SAVE_REQUEST, payload: product });
       const { userSignin: { userInfo } } = getState();
@@ -49,4 +49,4 @@ const detailsProduct  = (productId) => async (dispatch) => {
     }
 }
 
-export { listProducts, detailsProduct, saveProduct }
+export { listProducts, detailsProduct, saveProducts }
