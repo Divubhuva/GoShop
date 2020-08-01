@@ -21,7 +21,7 @@ export default {
         rating: 4.3,
         numReviews: 12,
         countInStock: 7,
-        description: 'Elegent long sleeve, regular fit'
+        description: 'Elegant long sleeve, regular fit'
     },
     {
         _id: '3',

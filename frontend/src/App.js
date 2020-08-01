@@ -7,7 +7,7 @@ import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/signinScreen';
 import RegisterScreen from './Screens/RegisterScreen'
-import ProductsScreen from './Screens/ProductScreen'
+import ProductsScreen from './Screens/ProductsScreen'
 import {useSelector} from 'react-redux'
 
 function App() {

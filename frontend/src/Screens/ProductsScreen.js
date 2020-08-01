@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../actions/userActions';
-import { saveProduct, listProducts, deleteProdcut } from '../actions/productActions';
+//import { signin } from '../actions/userActions';
+import { saveProduct, listProducts, deleteProduct } from '../actions/productAction';
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -54,7 +54,7 @@ function ProductsScreen(props) {
     }));
   }
   const deleteHandler = (product) => {
-    dispatch(deleteProdcut(product._id));
+    dispatch(deleteProduct(product._id));
   }
   return <div className="content content-margined">
 
