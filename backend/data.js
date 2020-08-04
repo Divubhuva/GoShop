@@ -81,7 +81,7 @@ export default {
         rating: 4.8,
         numReviews: 8,
         countInStock: 9,
-        description: 'Perfact & dance-all-night style'
+        description: 'Perfect & dance-all-night style'
     },
     {
         _id: '8',
