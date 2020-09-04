@@ -21,6 +21,12 @@ mongoose.connect(mongodbUrl, {
 const app = express();
 app.use(bodyParser.json());
 app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
+app.get("/api/config/paypal", (req, res) => {
+  res.send(config.PAYPAL_CLIENT_ID)
+})
+
 // app.get("/api/products/:id", (req, res) => {
 //   const productId = req.params.id;
 //   const product = data.products.find(x => x._id === productId);
@@ -30,8 +36,6 @@ app.use("/api/users", userRoute);
 //     res.status(404).send({ msg: "Product Not Found." })
 // });
 
- app.use("/api/products", productRoute);
- app.use("/api/orders", orderRoute)
 // app.get("/api/products", (req, res) => {
 //   res.send(data.products);
 // });

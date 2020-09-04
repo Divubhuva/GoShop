@@ -3,15 +3,26 @@ import { addToCart, removeFromCart } from '../actions/cartAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
-import { createOrder, detailsOrder } from '../actions/orderAction';
+import { createOrder, detailsOrder, payOrder } from '../actions/orderAction';
+import PaypalButton from '../components/PaypalButton';
 function OrderScreen(props) {
 
+  const orderPay = useSelector(state => state.orderPay)
+  const {loading: loadingPay, success: successPay, error: errorPay } = orderPay
   const dispatch = useDispatch();
   useEffect(() => {
+    if (successPay) {
+      props.history.push("/profile")
+    } else {
     dispatch(detailsOrder(props.match.params.id));
+    }
     return () => {
     };
-  }, []);
+  }, [successPay]);
+
+  const handleSuccessPayment = (paymentResult) => {
+    dispatch(payOrder(order, paymentResult))
+  }
 
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;
@@ -61,7 +72,7 @@ function OrderScreen(props) {
           </div>
                   :
                   order.orderItems.map(item =>
-                    <li>
+                    <li key={item._id}>
                       <div className="cart-image">
                         <img src={item.image} alt="product" />
                       </div>
@@ -89,8 +100,13 @@ function OrderScreen(props) {
         </div>
         <div className="placeorder-action">
           <ul>
-            <li>
-              <button className="button primary full-width" onClick={payHandler} >Pay Now</button>
+            <li className="placeorder-action-payment">
+            {loadingPay && <div>Finishing Payment...</div>}
+              {!order.isPaid && 
+                <PaypalButton 
+                  amount={order.totalPrice} 
+                  onSuccess={handleSuccessPayment} /> 
+              }
             </li>
             <li>
               <h3>Order Summary</h3>
