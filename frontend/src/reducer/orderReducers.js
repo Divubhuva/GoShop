@@ -1,5 +1,6 @@
 import { ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL, ORDER_DETAILS_REQUEST, 
-    ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_FAIL } from '../constants/orderConstants'
+    ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_FAIL, 
+    MY_ORDER_LIST_SUCCESS, MY_ORDER_LIST_FAIL, MY_ORDER_LIST_REQUEST } from '../constants/orderConstants'
 
 
 function orderCreateReducer(state = {}, action){
@@ -13,6 +14,20 @@ function orderCreateReducer(state = {}, action){
         default: 
             return state
     }
+}
+
+function myOrderListReducer(state = {
+  orders: [] 
+}, action) {
+  switch (action.type) {
+    case MY_ORDER_LIST_REQUEST:
+      return { loading: true };
+    case MY_ORDER_LIST_SUCCESS:
+      return { loading: false, orders: action.payload };
+    case MY_ORDER_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default: return state;
+  }
 }
 
 function orderDetailsReducer(state = {
@@ -50,4 +65,4 @@ function orderDetailsReducer(state = {
       default: return state;
     }
   }
-  export { orderCreateReducer, orderDetailsReducer, orderPayReducer } 
+  export { orderCreateReducer, myOrderListReducer, orderDetailsReducer, orderPayReducer } 
