@@ -471,3 +471,36 @@ tbody>tr:nth-child(odd){
 .dropdown:hover .dropdown-content{
   display: block;
 }
+
+/* Filter */
+.filter{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 47rem;
+  justify-content: space-between;
+}
+
+.filter input,
+.filter button,
+.filter select{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #203020 solid;
+  font-size: 1.6rem;
+}
+
+.categories a{
+  padding: 0;
+  list-style-type: none;
+}
+
+.categories a{
+  display: flex;
+  padding: 1rem;
+}
+
+.categories a:hover{
+  background-color: #c0c0c0;
+}

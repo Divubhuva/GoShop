@@ -41,7 +41,6 @@ function App() {
                 </div>
                 <div className="header-links">
                 <Link to="/cart"> Cart</Link>
-                    {/* <a href="cart.html">Cart</a> */}
                     {
                         userInfo ? <Link to="/profile">{userInfo.name}</Link> :
                         <Link to="/signin"> Sign In</Link>
@@ -64,18 +63,18 @@ function App() {
             <aside className="sidebar">
                 <h3>Shopping Categories</h3>
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-                <ul>
+                <ul className="categories">
                     <li>
-                        <a href="index.html">Office Dresses</a>
+                        <Link to="/category/Office">Office Dresses</Link>
                     </li>
                     <li>
-                        <a href="index.html">Summer Dresses</a>
+                        <Link to="/category/Summer">Summer Dresses</Link>
                     </li>
                     <li>
-                        <a href="index.html">Party Dresses</a>
+                        <Link to="/category/Party">Party Dresses</Link>
                     </li>
                     <li>
-                        <a href="index.html">Plus Size Dresses</a>
+                        <Link to="/category/Plus">Plus Size Dresses</Link>
                     </li>
                 </ul>
             </aside>
@@ -92,6 +91,7 @@ function App() {
                     <Route path="/register" component={RegisterScreen} />
                     <Route path="/product/:id" component={ProductScreen} />
                     <Route path="/cart/:id?" component={CartScreen} />
+                    <Route path="/category/:id" component={HomeScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
                 </div>
             </main>
