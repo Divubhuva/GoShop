@@ -1,10 +1,10 @@
 html{
-  font-size: 62.5%;
+  font-size: 70%;
   box-sizing: border-box;
 }
 
 body{
-  font: 1.6rem Helvetica;
+  font: 1.6rem courier;
   height: 100vh;
   margin: 0;
 }
@@ -26,7 +26,7 @@ body{
 
 .header{
   grid-area: header;
-  background-color: #203040;
+  background-color: #560969;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,7 @@ body{
 
 .footer{
   grid-area: footer;
-  background-color: #203040;
+  background-color: #560969;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -228,6 +228,7 @@ a{
   cursor: pointer;
   font-size: 1.5rem;
   margin: 1rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .full-width{
@@ -235,11 +236,13 @@ a{
 }
 
 .button:hover{
-  border: 0.1rem #0f0e0e solid;
+  border: 0.2rem #0f0e0e solid;
 }
 
 .button.primary{
   background-color: rgb(202, 184, 16);
+  font-family: 'Courier New', Courier, monospace ;
+  font-weight: bold;
 }
 
 .details-action ul li, .details-info ul li{
@@ -248,6 +251,7 @@ a{
 
 .button.secondary{
   background-color: #f0f0f0;
+
 }
 
 .text-center{
@@ -345,6 +349,7 @@ a{
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Products */
@@ -464,7 +469,7 @@ tbody>tr:nth-child(odd){
   padding: 1rem;
   list-style-type: none;
   z-index: 1;
-  background-color: #203040;
+  background-color: #560969;
   margin: 0;
   margin-top:0.4rem;
 }
@@ -478,8 +483,9 @@ tbody>tr:nth-child(odd){
   list-style-type: none;
   padding: 0;
   margin: 1rem auto;
-  max-width: 47rem;
+  max-width: 50rem;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 .filter input,
@@ -489,6 +495,7 @@ tbody>tr:nth-child(odd){
   border-radius: 0.5rem;
   border: 0.1rem #203020 solid;
   font-size: 1.6rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .categories a{
