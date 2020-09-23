@@ -35,6 +35,9 @@ app.use("/api/products", _productRoute["default"]);
 app.use("/api/orders", _orderRoute["default"]);
 app.get("/api/config/paypal", function (req, res) {
   res.send(_config["default"].PAYPAL_CLIENT_ID);
+app.use(express.static(path.join(__dirname, '/../frontend/build')));
+app.get('*', (req, res) => res.sendFile(path.join('${__dirname}/../frontend/build/index.html')))
+app.listen(config.PORT)
 }); // app.get("/api/products/:id", (req, res) => {
 //   const productId = req.params.id;
 //   const product = data.products.find(x => x._id === productId);
