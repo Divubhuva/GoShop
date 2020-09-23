@@ -12,7 +12,7 @@ function CartScreen(props) {
     const dispatch = useDispatch()
     const removeFromCartHandler = (productId) => {
         dispatch(removeFromCart(productId))
-    }
+    } 
 
     useEffect(() => {
         if(productId){
