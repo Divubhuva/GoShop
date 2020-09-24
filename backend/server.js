@@ -9,6 +9,7 @@ import orderRoute  from './routes/orderRoute'
 
 
 const mongodbUrl = config.MONGODB_URL;
+console.log(mongodbUrl);
 mongoose.connect(mongodbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
