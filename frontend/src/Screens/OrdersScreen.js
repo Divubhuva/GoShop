@@ -37,7 +37,7 @@ function OrdersScreen(props) {
             <th>ID</th>
             <th>DATE</th>
             <th>TOTAL</th>
-            <th>USER</th>
+            {/* <th>USER</th> */}
             <th>PAID</th>
             <th>PAID AT</th>
             <th>DELIVERED</th>
@@ -46,12 +46,11 @@ function OrdersScreen(props) {
           </tr>
         </thead>
         <tbody>
-
           {orders.map(order => (<tr key={order._id}>
             <td>{order._id}</td>
             <td>{order.createdAt}</td>
             <td>{order.totalPrice}</td>
-            <td>{order.user.name}</td>
+            {/* <td>{order.user.name}</td> */}
             <td>{order.isPaid.toString()}</td>
             <td>{order.paidAt}</td>
             <td>{order.isDelivered.toString()}</td>
@@ -69,4 +68,4 @@ function OrdersScreen(props) {
     </div>
   </div>
 }
-export default OrdersScreen;
+export default OrdersScreen; 
