@@ -19,9 +19,7 @@ mongoose.connect(mongodbUrl, {
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '/../frontend/build')));
-app.get('*', (req, res) => res.sendFile(path.join('${__dirname}/../frontend/build/index.html')))
-app.listen(config.PORT, 5000)
+
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
