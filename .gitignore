@@ -25,3 +25,4 @@ yarn-error.log*
 
 # frontend
 /frontend/node_modules
+/.env
