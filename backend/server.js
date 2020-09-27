@@ -20,6 +20,7 @@ mongoose.connect(mongodbUrl, {
 
 const app = express();
 app.use(bodyParser.json());
+app.use (express.static('frontend/build'));
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
