@@ -18,6 +18,9 @@ import orderRoute  from './routes/orderRoute'
 
 
 const app = express();
+app.get("/", (req, res) => {
+  res.send("/ is calling")
+})
 // app.use(bodyParser.json());
 // app.use("/api/users", userRoute);
 // app.use("/api/products", productRoute);
