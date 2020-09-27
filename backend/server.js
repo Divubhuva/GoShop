@@ -14,7 +14,7 @@ mongoose.connect(mongodbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
-}).catch(error => console.log(error.reason));
+}).catch(error => console.log("Database not connected"));
 
 
 const app = express();
