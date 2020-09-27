@@ -17,6 +17,7 @@ mongoose.connect(mongodbUrl, {
 }).catch(error => console.log("Database not connected"));
 
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use("/api/users", userRoute);
