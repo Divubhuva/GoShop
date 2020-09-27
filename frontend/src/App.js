@@ -34,12 +34,12 @@ function App() {
     <div className="grid-container">
             <header className="header">
                 <div className="brand">
-                    {/* <button onClick={openMenu}>
+                    <button onClick={openMenu}>
                         &#9776;
-                    </button> */}
+                    </button>
                     <Link to="/" >GoShop</Link>
                 </div>
-                {/* <div className="header-links">
+                <div className="header-links">
                 <Link to="/cart"> Cart</Link>
                     {
                         userInfo ? <Link to="/profile">{userInfo.name}</Link> :
@@ -58,9 +58,9 @@ function App() {
                         </div>
                     )}
 
-                </div> */}
+                </div>
             </header>
-            {/* <aside className="sidebar">
+            <aside className="sidebar">
                 <h3>Shopping Categories</h3>
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button>
                 <ul className="categories">
@@ -97,7 +97,7 @@ function App() {
             </main>
             <footer className="footer">
                 All right reserved.
-            </footer> */}
+            </footer>
         </div>
         </BrowserRouter>
     );
