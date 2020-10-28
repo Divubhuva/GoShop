@@ -8,8 +8,8 @@ router.get("/", async (req, res) => {
   const searchKeyword = req.query.searchKeyword ? {
     name: {
       $regex: req.query.searchKeyword,
-      $options: 'i'
-    }
+      $options: 'i',
+    },
   } : {};
   const sortOrder = req.query.sortOrder ?
     (req.query.sortOrder === 'lowest' ? { price: -1 } : { price: 1 })
@@ -33,6 +33,30 @@ router.get("/:id", async (req, res) => {
     res.status(404).send({ message: "Product Not Found." });
   }
 });
+
+// router.post("/:id", isAuth, async (req, res) => {
+//   console.log("ANSA")
+  // const product = await Product.findById(req.params.id);
+  // if (product) {
+  //   const review = {
+  //     name: req.body.name,
+  //     rating: Number(req.body.rating),
+  //     comment: req.body.comment,
+  //   };
+  //   product.reviews.push(review);
+  //   product.numReviews = product.reviews.length;
+  //   product.rating =
+  //     product.reviews.reduce((a, c) => c.rating + a, 0) /
+  //     product.reviews.length;
+  //   const updatedProduct = await product.save();
+  //   res.status(201).send({
+  //     data: updatedProduct.reviews[updatedProduct.reviews.length - 1],
+  //     message: "Review saved successfully.",
+  //   });
+  // } else {
+  //   res.status(404).send({ message: 'Product Not Found' });
+  // }
+//})
 
 router.put("/:id", isAuth, isAdmin, async (req, res) => {
   const productId = req.params.id;
@@ -78,5 +102,11 @@ router.post("/", isAuth, isAdmin, async (req, res) => {
     return res.status(201).send({ message: 'New Product Created', data: newProduct });
   }
   return res.status(500).send({ message: ' Error in Creating Product.' });
+})
+
+router.post("/abcd",  async (req, res) => {
+console.log("XYZ")
+    return res.status(201).send({ message: 'New Product Created'});
+  
 })
 export default router;

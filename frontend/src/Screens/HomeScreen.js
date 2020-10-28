@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 //import axios from 'axios';
 import { useSelector,useDispatch } from 'react-redux'
 import {listProducts} from '../actions/productAction'
+import Rating from '../components/Rating'
 
 function HomeScreen(props) {
 
@@ -17,7 +18,7 @@ function HomeScreen(props) {
         dispatch(listProducts(category))
         return () => {
             //
-        }
+        }  
     }, [category])
 
     const submitHandler = (e) => {
@@ -66,7 +67,9 @@ function HomeScreen(props) {
                 </div>
             <div className="product-brand">{product.brand}</div>
             <div className="product-price">${product.price}</div>
-            <div className="product-rating">{product.rating} stars {product.numReviews} Reviews</div>
+            <div className="product-rating">
+                <Rating value={product.rating} text={product.numReviews + ' reviews'} />
+                </div>
         </div>
     </li>)
     }

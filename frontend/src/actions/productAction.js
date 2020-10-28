@@ -1,9 +1,14 @@
 import {
   PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL,
-  PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_SAVE_REQUEST, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_FAIL, PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAIL, PRODUCT_DELETE_REQUEST
+  PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL,
+  PRODUCT_SAVE_REQUEST, PRODUCT_SAVE_SUCCESS, PRODUCT_SAVE_FAIL, 
+  PRODUCT_DELETE_SUCCESS, PRODUCT_DELETE_FAIL, PRODUCT_DELETE_REQUEST, 
+  PRODUCT_REVIEW_SAVE_REQUEST, PRODUCT_REVIEW_SAVE_SUCCESS, 
+  PRODUCT_REVIEW_SAVE_FAIL
 } from "../constants/productConstants"
 import axios from 'axios';
 import Axios from "axios";
+
 
 const listProducts = (category = '', searchKeyword = '', sortOrder = '') => async (dispatch) => {
   try {
@@ -72,4 +77,50 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
   }
 }
 
-export { listProducts, detailsProduct, saveProduct, deleteProduct }
+// const saveProductReview = (productId, reviews) => async (dispatch, getState) => {
+//   try {
+//     console.log(productId)
+//     const { userSignin: { userInfo } } = getState();
+//     // const {
+//     //   userSignin: {
+//     //     userInfo: { token },
+//     //   },
+//     // } = getState()
+//     dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: reviews });
+//     const { data } = await axios.post(`/api/products/abcd`, reviews,
+//       {
+//         headers: {
+//           'Authorization': 'Bearer ' + userInfo.token
+//         }
+//         // headers: {
+//         //   Authorization: 'Bearer ' + token,
+//         // },
+//       }
+//     );
+//      dispatch({ type: PRODUCT_REVIEW_SAVE_SUCCESS, payload: data });
+//   } catch (error) {
+//     //report error
+//     dispatch({ type: PRODUCT_REVIEW_SAVE_FAIL, payload: error.message });
+//   }
+// }
+
+const saveProductReview = (productId, reviews) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: PRODUCT_SAVE_REQUEST, payload: reviews });
+    const { userSignin: { userInfo } } = getState();
+   console.log(userInfo.token)
+      const { data } = await Axios.post(`/api/products/abcd`, reviews, {
+        headers: {
+          'Authorization': 'Bearer ' + userInfo.token
+        }
+      });
+      dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
+
+  } catch (error) {
+
+    dispatch({ type: PRODUCT_SAVE_FAIL, payload: error.message });
+  }
+}
+
+
+export { listProducts, detailsProduct, saveProduct, deleteProduct, saveProductReview }

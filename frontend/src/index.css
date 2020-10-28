@@ -121,6 +121,38 @@ a{
   margin-bottom: 1rem;
 }
 
+/* Review */
+ul.review {
+  list-style-type: none;
+  padding: 0;
+}
+.review li {
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+.review li > div {
+  margin-top: 0.5rem;
+}
+
+/* Rating */
+.rating span{
+  color: #ffb901;
+  font-size: 1.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0.1rem;
+}
+
+.rating span:last-child{
+  color: #444444;
+  font-size: 1.4rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a > .rating > span:last-child{
+  color: #0000ff;
+}
+
 /*Sidebar*/
 .brand button{
   font-size: 3rem;
