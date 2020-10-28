@@ -77,48 +77,27 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
   }
 }
 
-// const saveProductReview = (productId, reviews) => async (dispatch, getState) => {
-//   try {
-//     console.log(productId)
-//     const { userSignin: { userInfo } } = getState();
-//     // const {
-//     //   userSignin: {
-//     //     userInfo: { token },
-//     //   },
-//     // } = getState()
-//     dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: reviews });
-//     const { data } = await axios.post(`/api/products/abcd`, reviews,
-//       {
-//         headers: {
-//           'Authorization': 'Bearer ' + userInfo.token
-//         }
-//         // headers: {
-//         //   Authorization: 'Bearer ' + token,
-//         // },
-//       }
-//     );
-//      dispatch({ type: PRODUCT_REVIEW_SAVE_SUCCESS, payload: data });
-//   } catch (error) {
-//     //report error
-//     dispatch({ type: PRODUCT_REVIEW_SAVE_FAIL, payload: error.message });
-//   }
-// }
-
-const saveProductReview = (productId, reviews) => async (dispatch, getState) => {
+const saveProductReview = (productId, review) => async (dispatch, getState) => {
   try {
-    dispatch({ type: PRODUCT_SAVE_REQUEST, payload: reviews });
-    const { userSignin: { userInfo } } = getState();
-   console.log(userInfo.token)
-      const { data } = await Axios.post(`/api/products/abcd`, reviews, {
+    const {
+      userSignin: {
+        userInfo: { token },
+      },
+    } = getState();
+    dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: review })
+    const { data } = await axios.post(
+      `/api/products/${productId}/reviews`,
+      review,
+      {
         headers: {
-          'Authorization': 'Bearer ' + userInfo.token
-        }
-      });
-      dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
-
+          Authorization: 'Bearer ' + token,
+        },
+      }
+    );
+    dispatch({ type: PRODUCT_REVIEW_SAVE_SUCCESS, payload: data })
   } catch (error) {
-
-    dispatch({ type: PRODUCT_SAVE_FAIL, payload: error.message });
+    // report error
+    dispatch({ type: PRODUCT_REVIEW_SAVE_FAIL, payload: error.message });
   }
 }
 

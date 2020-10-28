@@ -11,9 +11,9 @@ function ProductScreen(props) {
     const [comment, setComment] = useState('')
     const userSignin = useSelector((state) => state.userSignin)
     const { userInfo } = userSignin;
-    const productDetails = useSelector(state => state.productDetails)
+    const productDetails = useSelector((state) => state.productDetails)
     const {product, loading, error} = productDetails;
-    const productReviewSave = useSelector(state => state.productReviewSave)
+    const productReviewSave = useSelector((state)=> state.productReviewSave)
     const {success: productSaveSuccess} = productReviewSave
     const dispatch = useDispatch() ;
 

@@ -60,11 +60,12 @@ function productSaveReducer(state = { product: {} }, action) {
 }
 
 function productReviewSaveReducer(state = {}, action) {
+
   switch (action.type) {
     case PRODUCT_REVIEW_SAVE_REQUEST:
       return { loading: true };
     case PRODUCT_REVIEW_SAVE_SUCCESS:
-      return { loading: false, review: action.payload, success: true };
+      return { loading: false,success: true, review: action.payload };
     case PRODUCT_REVIEW_SAVE_FAIL:
       return { loading: false, error: action.payload };
     case PRODUCT_REVIEW_SAVE_RESET:
