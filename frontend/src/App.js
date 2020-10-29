@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 //import data from './data'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
@@ -15,13 +15,27 @@ import OrderScreen from './Screens/OrderScreen'
 import ProfileScreen from './Screens/ProfileScreen'
 import AboutScreen from './Screens/AboutScreen'
 import OrdersScreen from './Screens/OrdersScreen'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import {listProducts} from '../src/actions/productAction'
 
 function App() {
 
+    const [searchKeyword, setSearchKeyword] = useState('')
     const userSignin = useSelector((state) => state.userSignin)
     const {userInfo} = userSignin;
+    const dispatch = useDispatch()
 
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(listProducts(searchKeyword))
+    }
+
+    useEffect(() => {
+        dispatch(listProducts())
+        return () => {
+            //
+        }  
+    }, [])
 
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open")
@@ -40,6 +54,14 @@ function App() {
                     </button>
                     <Link to="/" >GoShop</Link>
                 </div>
+                <ul className="filter">
+                <li>
+                <form onSubmit={submitHandler}>
+                    <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
+                    <button type="submit"><i className="fa fa-search"></i></button>
+                </form>
+                </li>
+                </ul>
                 <div className="header-links">
                 <Link to="/about"> About </Link>
                 <Link to="/cart"> &#128722;  </Link>

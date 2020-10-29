@@ -7,7 +7,7 @@ import Rating from '../components/Rating'
 
 function HomeScreen(props) {
 
-    const [searchKeyword, setSearchKeyword] = useState('')
+    //const [searchKeyword, setSearchKeyword] = useState('')
     const [sortOrder, setSortOrder] = useState('')
     const category = props.match.params.id ? props.match.params.id : ''
     const productList = useSelector(state => state.productList)
@@ -21,14 +21,14 @@ function HomeScreen(props) {
         }  
     }, [category])
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(listProducts(category, searchKeyword, sortOrder))
-    }
+    // const submitHandler = (e) => {
+    //     e.preventDefault()
+    //     dispatch(listProducts(category, searchKeyword, sortOrder))
+    // }
 
     const sortHandler = (e) => {
         setSortOrder(e.target.value)
-        dispatch(listProducts(category, searchKeyword, sortOrder))
+        dispatch(listProducts(category, sortOrder))
     }
 
     return <>
@@ -36,12 +36,12 @@ function HomeScreen(props) {
         <h2>{category}</h2>}
 
         <ul className="filter">
-            <li>
+            {/* <li>
                 <form onSubmit={submitHandler}>
                     <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
                     <button type="submit">Search</button>
                 </form>
-            </li>
+            </li> */}
             
             <li>
                 Sort By {' '}

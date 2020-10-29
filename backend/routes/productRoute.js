@@ -34,7 +34,6 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post('/:id/reviews',isAuth, async (req, res) => {
-  console.log("id")
   const product = await Product.findById(req.params.id);
   if (product) {
     const review = {
