@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 //import data from './data'
 import {useSelector} from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
- import HomeScreen from './Screens/HomeScreen'
-import ProductScreen from './Screens/ProductScreen'
-import CartScreen from './Screens/CartScreen'
-import SigninScreen from './Screens/signinScreen';
-import RegisterScreen from './Screens/RegisterScreen'
-import ProductsScreen from './Screens/ProductsScreen'
-import ShippingScreen from './Screens/ShippingScreen'
-import PaymentScreen from './Screens/PaymentScreen'
-import placeOrderScreen from './Screens/PlaceOrderScreen'
-import OrderScreen from './Screens/OrderScreen'
-import ProfileScreen from './Screens/ProfileScreen'
-import AboutScreen from './Screens/AboutScreen'
-import OrdersScreen from './Screens/OrdersScreen'
+// import HomeScreen from './Screens/HomeScreen'
+// import ProductScreen from './Screens/ProductScreen'
+// import CartScreen from './Screens/CartScreen'
+// import SigninScreen from './Screens/signinScreen';
+// import RegisterScreen from './Screens/RegisterScreen'
+// import ProductsScreen from './Screens/ProductsScreen'
+// import ShippingScreen from './Screens/ShippingScreen'
+// import PaymentScreen from './Screens/PaymentScreen'
+// import placeOrderScreen from './Screens/PlaceOrderScreen'
+// import OrderScreen from './Screens/OrderScreen'
+// import ProfileScreen from './Screens/ProfileScreen'
+// import AboutScreen from './Screens/AboutScreen'
+// import OrdersScreen from './Screens/OrdersScreen'
+
+const HomeScreen =lazy(()=>import('./Screens/HomeScreen'));
+const ProductScreen =lazy(()=>import('./Screens/ProductScreen'));
+const CartScreen =lazy(()=>import('./Screens/CartScreen'));
+const SigninScreen =lazy(()=>import('./Screens/signinScreen'));
+const RegisterScreen =lazy(()=>import('./Screens/RegisterScreen'));
+const ProductsScreen =lazy(()=>import('./Screens/ProductsScreen'));
+const ShippingScreen =lazy(()=>import('./Screens/ShippingScreen'));
+const PaymentScreen =lazy(()=>import('./Screens/PaymentScreen'));
+const placeOrderScreen =lazy(()=>import('./Screens/PlaceOrderScreen'));
+const OrderScreen =lazy(()=>import('./Screens/OrderScreen'));
+const ProfileScreen =lazy(()=>import('./Screens/ProfileScreen'));
+const AboutScreen =lazy(()=>import('./Screens/AboutScreen'));
+const OrdersScreen =lazy(()=>import('./Screens/OrdersScreen'));
 
 
 function App() {
@@ -89,6 +103,7 @@ function App() {
                 </ul>
             </aside>
             <main className="main">
+                <Suspense fallback = {<div  className="loader"></div>}>
                 <div className="content">
                     <Route path="/orders" component={OrdersScreen} />
                     <Route path="/profile" component={ProfileScreen} />       
@@ -105,6 +120,7 @@ function App() {
                     <Route path="/category/:id" component={HomeScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
                 </div>
+                </Suspense>
             </main>  
             <footer className="footer">
                 All right reserved.

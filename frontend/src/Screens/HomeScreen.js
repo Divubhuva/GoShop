@@ -52,7 +52,7 @@ function HomeScreen(props) {
                 </select>
             </li> */}
         </ul>
-        {loading ? <div>Loading...</div> :
+        {loading ? <div  className="loader"></div> :
         error ? <div>{error}</div> :
     <ul className="products">
     {
