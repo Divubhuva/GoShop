@@ -74,13 +74,13 @@ a{
   color: darkslateblue;
 }
 
-.Loading{
+.Center{
   position: absolute;
   left: 50%;
-  top: 50%;
+  right: 50%;
 } 
 
-.Loading .loader {
+.Center .loader {
   border: 0.6rem solid #f3f3f3;
   border-radius: 50%;
   border-top: 0.6rem solid #7a93a3;
@@ -101,7 +101,7 @@ a{
   100% { transform: rotate(360deg); }
 } 
 
-.Loading .LoadingText{
+.Center .LoadingText{
   color: #7a93a3 ;
   padding-top: 1rem;
   font-size: x-large;
