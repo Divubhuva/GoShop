@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 import {listProducts} from '../actions/productAction'
 import Rating from '../components/Rating'
+import LoadingComp from '../components/LoadingComp'
 
 function HomeScreen(props) {
 
@@ -52,7 +53,7 @@ function HomeScreen(props) {
                 </select>
             </li> */}
         </ul>
-        {loading ? <div  className="loader"></div> :
+        {loading ? <div><LoadingComp /></div> :
         error ? <div>{error}</div> :
     <ul className="products">
     {

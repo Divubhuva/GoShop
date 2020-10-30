@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from 'react';
 import {useSelector} from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
+import LoadingComp from './components/LoadingComp'
 // import HomeScreen from './Screens/HomeScreen'
 // import ProductScreen from './Screens/ProductScreen'
 // import CartScreen from './Screens/CartScreen'
@@ -103,7 +104,7 @@ function App() {
                 </ul>
             </aside>
             <main className="main">
-                <Suspense fallback = {<div  className="loader"></div>}>
+                <Suspense fallback = {<div><LoadingComp /></div>}>
                 <div className="content">
                     <Route path="/orders" component={OrdersScreen} />
                     <Route path="/profile" component={ProfileScreen} />       
