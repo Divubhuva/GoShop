@@ -74,10 +74,13 @@ a{
   color: darkslateblue;
 }
 
-.loader {
+.Loading{
   position: absolute;
   left: 50%;
   top: 50%;
+} 
+
+.Loading .loader {
   border: 0.6rem solid #f3f3f3;
   border-radius: 50%;
   border-top: 0.6rem solid #7a93a3;
@@ -97,6 +100,12 @@ a{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 } 
+
+.Loading .LoadingText{
+  color: #7a93a3 ;
+  padding-top: 1rem;
+  font-size: x-large;
+}
 
 /*Home Screen*/
 .products{
