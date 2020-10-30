@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 //import data from './data'
+import {useSelector} from 'react-redux'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
-import HomeScreen from './Screens/HomeScreen'
+ import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/signinScreen';
@@ -15,27 +16,12 @@ import OrderScreen from './Screens/OrderScreen'
 import ProfileScreen from './Screens/ProfileScreen'
 import AboutScreen from './Screens/AboutScreen'
 import OrdersScreen from './Screens/OrdersScreen'
-import {useSelector, useDispatch} from 'react-redux'
-import {listProducts} from '../src/actions/productAction'
+
 
 function App() {
 
-    const [searchKeyword, setSearchKeyword] = useState('')
     const userSignin = useSelector((state) => state.userSignin)
     const {userInfo} = userSignin;
-    const dispatch = useDispatch()
-
-    const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(listProducts(searchKeyword))
-    }
-
-    useEffect(() => {
-        dispatch(listProducts())
-        return () => {
-            //
-        }  
-    }, [])
 
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open")
@@ -54,22 +40,22 @@ function App() {
                     </button>
                     <Link to="/" >GoShop</Link>
                 </div>
-                <ul className="filter">
-                <li>
-                <form onSubmit={submitHandler}>
-                    <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
-                    <button type="submit"><i className="fa fa-search"></i></button>
-                </form>
-                </li>
-                </ul>
                 <div className="header-links">
-                <Link to="/about"> About </Link>
-                <Link to="/cart"> &#128722;  </Link>
+                <div className="dropdown1">
+                        <a href="#"  >Contact Us</a>
+                        <ul className="dropdown1-content">
+                            <li>
+                              <h2>Phone: +1(123)456-7890 </h2>
+                              <h2>Email: mygoshop@gmail.com </h2>
+                            </li>
+                        </ul>
+                        </div>
+                 <Link to="/about"> About </Link>
+                 <Link to="/cart"> <i className="fa fa-shopping-cart"></i>  </Link>
                     {
-                        userInfo ? <Link to="/profile">{userInfo.name}</Link> :
+                        userInfo ? <Link to="/profile"><i className='fa fa-user'></i></Link> :
                         <Link to="/signin"> Sign In</Link>
                     }
-
                     {userInfo && userInfo.isAdmin && (
                         <div className="dropdown">
                         <a href="#"  >Admin</a>
@@ -83,6 +69,7 @@ function App() {
                     )}
                 </div>
             </header>
+           
             <aside className="sidebar">
                 <h3>Shopping Categories</h3>
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button>
@@ -118,7 +105,7 @@ function App() {
                     <Route path="/category/:id" component={HomeScreen} />
                     <Route path="/" exact={true} component={HomeScreen} />
                 </div>
-            </main>
+            </main>  
             <footer className="footer">
                 All right reserved.
             </footer>

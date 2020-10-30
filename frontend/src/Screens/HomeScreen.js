@@ -7,7 +7,7 @@ import Rating from '../components/Rating'
 
 function HomeScreen(props) {
 
-    //const [searchKeyword, setSearchKeyword] = useState('')
+    const [searchKeyword, setSearchKeyword] = useState('')
     const [sortOrder, setSortOrder] = useState('')
     const category = props.match.params.id ? props.match.params.id : ''
     const productList = useSelector(state => state.productList)
@@ -21,36 +21,36 @@ function HomeScreen(props) {
         }  
     }, [category])
 
-    // const submitHandler = (e) => {
-    //     e.preventDefault()
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(listProducts(category, searchKeyword, sortOrder))
+    }
+
+    // const sortHandler = (e) => {
+    //     setSortOrder(e.target.value)
     //     dispatch(listProducts(category, searchKeyword, sortOrder))
     // }
-
-    const sortHandler = (e) => {
-        setSortOrder(e.target.value)
-        dispatch(listProducts(category, sortOrder))
-    }
 
     return <>
         {category && 
         <h2>{category}</h2>}
 
         <ul className="filter">
-            {/* <li>
+            <li>
                 <form onSubmit={submitHandler}>
                     <input name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
-                    <button type="submit">Search</button>
+                    <button type="submit"><i className="fa fa-search"></i></button>
                 </form>
-            </li> */}
+            </li>
             
-            <li>
+            {/* <li>
                 Sort By {' '}
                 <select name="sortOrder" onChange={sortHandler}>
                     <option value="">Newest</option>
                     <option value="lowest">Lowest</option>
                     <option value="highest">Highest</option>
                 </select>
-            </li>
+            </li> */}
         </ul>
         {loading ? <div>Loading...</div> :
         error ? <div>{error}</div> :

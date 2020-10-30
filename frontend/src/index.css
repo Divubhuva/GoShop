@@ -4,7 +4,8 @@ html{
 }
 
 body{
-  font: 1.6rem courier;
+  font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   height: 100vh;
   margin: 0;
 }
@@ -26,7 +27,7 @@ body{
 
 .header{
   grid-area: header;
-  background-color: #560969;
+  background-color: #094e69;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -57,7 +58,7 @@ body{
 
 .footer{
   grid-area: footer;
-  background-color: #560969;
+  background-color: #094e69;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -139,14 +140,14 @@ ul.review {
 .rating span{
   color: #ffb901;
   font-size: 1.8rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0.1rem;
 }
 
 .rating span:last-child{
   color: #444444;
   font-size: 1.4rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 a > .rating > span:last-child{
@@ -251,6 +252,7 @@ a > .rating > span:last-child{
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .buttons{
@@ -260,7 +262,7 @@ a > .rating > span:last-child{
   cursor: pointer;
   font-size: 1.5rem;
   margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .full-width{
@@ -273,7 +275,7 @@ a > .rating > span:last-child{
 
 .button.primary{
   background-color: rgb(202, 184, 16);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 
@@ -283,6 +285,7 @@ a > .rating > span:last-child{
 
 .button.secondary{
   background-color: #f0f0f0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 
@@ -381,7 +384,7 @@ a > .rating > span:last-child{
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Products */
@@ -493,6 +496,7 @@ tbody>tr:nth-child(odd){
 .dropdown{
   display: inline-block;
   position: relative;
+  font-weight: lighter;
 }
 .dropdown-content{
   position: absolute;
@@ -501,17 +505,36 @@ tbody>tr:nth-child(odd){
   padding: 1rem;
   list-style-type: none;
   z-index: 1;
-  background-color: #560969;
+  background-color:#094e69;
   margin: 0;
   margin-top:0.4rem;
 }
 .dropdown:hover .dropdown-content{
   display: block;
 }
+.dropdown1{
+  display: inline-block;
+  position: relative;
+}
+.dropdown1-content{
+  font-size: 60%;
+  position: absolute;
+  display: none;
+  right: 0;
+  padding: 1rem;
+  list-style-type: none;
+  z-index: 1;
+  background-color:#094e69;
+  margin: 0;
+  margin-top: 0.1rem;
+}
+.dropdown1:hover .dropdown1-content{
+  display: block;
+}
 
 /* Filter */
 .filter{
-  display: flexbox;
+  display: flex;
   list-style-type: none;
   padding: 0;
   margin: 1rem auto;
@@ -520,14 +543,22 @@ tbody>tr:nth-child(odd){
   font-weight: bold;
 }
 
-.filter input,
+.filter input{
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  padding-right: 25rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #203020 solid;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .filter button,
 .filter select{
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   border: 0.1rem #203020 solid;
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .categories a{

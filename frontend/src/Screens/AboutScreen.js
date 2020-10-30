@@ -3,6 +3,7 @@ import React from 'react'
 function AboutScreen() {
     return (
         <div>
+            <p>
             This is an e-commerce website. 
              •	User can search product, Filter product, add product in Shopping card, and do payment with help of PayPal. 
              •	Develop Shopping website with help of React library and Express Firmware.
@@ -16,6 +17,7 @@ function AboutScreen() {
              •	Use Various tools like VS code, Git-Extension, for development and maintain code.
              •	Create the continuous integration and deployment (CI/CD) on Heroku server 
              •	Use debugging method like breakpoint, step-into, step over, and tool like Postman for checking response of API.
+             </p>
         </div>
     )
 }
