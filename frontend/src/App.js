@@ -87,7 +87,7 @@ function App() {
            
             <aside className="sidebar">
                 <h3>Shopping Categories</h3>
-                <button className="sidebar-close-button" onClick={closeMenu}>x</button>
+                <button className="sidebar-close-button" onClick={closeMenu}><i className="fa fa-close"></i></button>
                 <ul className="categories">
                     <li>
                         <Link to="/category/Office">Office Dresses</Link>
@@ -123,6 +123,7 @@ function App() {
                 </div>
                 </Suspense>
             </main>  
+
             <footer className="footer">
                 All right reserved.
             </footer>
