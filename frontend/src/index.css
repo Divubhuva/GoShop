@@ -6,10 +6,9 @@ html{
 body{
   font-size: 1.5rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(231, 239, 245);
   height: 100vh;
   margin: 0;
-  background-image: url("./Wallpaper.jpg");
-  background-size: 300% ;
 }
 
 #root{
@@ -197,18 +196,25 @@ a > .rating > span:last-child{
   border: none;
   cursor: pointer;
   text-decoration: none;
+  color: white;
 }
 
 .sidebar{
   position: fixed;
+  background-color: rgb(231, 239, 245);;
   transition: all 0.5s;
   transform: translateX(-30rem);
   width: 30rem;
   height: 100%;
   color:  #021d27;
-  text-decoration: underline;
-  background-image: url("./Wallpaper.jpg");
-  background-size: 400%;
+}
+
+.sidebar > h3{
+background-color:  #094e69;
+padding: 1.5rem;
+margin-top: 0%;
+color: white;
+text-decoration: underline;
 }
 
 .sidebar.open{
@@ -258,8 +264,6 @@ a > .rating > span:last-child{
 
 .details-action{
   flex: 1 1 30rem;
-  background-image: url("./Wallpaper.jpg");
-  background-size: 100%;
 }
 
 .details-info ul, .details-action ul{
@@ -352,8 +356,6 @@ a > .rating > span:last-child{
 .cart-action{
   flex: 1 1 20rem;
   background-color: #f0f0f0;
-  background-image: url("./Wallpaper.jpg");
-  background-size: 100%;
   border:#021d27 solid;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -490,15 +492,11 @@ tbody>tr:nth-child(odd){
   flex: 1 1 20rem;
   border: .1rem #021d27 solid;
   border-radius: .5rem;
-  background-image: url("./Wallpaper.jpg");
-  background-size: cover;
   padding: 1rem;
 }
 .placeorder-info > div{
   border: .1rem #021d27 solid;
   border-radius: .5rem;
-  background-image: url("./Wallpaper.jpg");
-  background-size: cover;
   
   padding: 1rem;
   margin: 1rem;
@@ -620,7 +618,6 @@ tbody>tr:nth-child(odd){
 }
 
 .categories a:hover{
-  background-image: url("./Wallpaper.jpg");
   background-size: 100%;;
 }
 
